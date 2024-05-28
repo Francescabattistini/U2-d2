@@ -53,12 +53,13 @@ header {
 @media screen and (min-width: 1200px) {
   header {
     text-align: left;
-    /* CHIEDI PER FIXED */
+    /* non abbiamo usato fixed perchè sennò rimaneva attaccato"appiccicoso " con la parte sopra bianca mentre sticky ci permette di muoverlo */
     position: sticky;
     right: 0;
     left: 0;
     bottom: 0;
     top: 0;
+    z-index: 6;
     /* ************************************************************************************************************ */
   }
   header .brand,
@@ -132,7 +133,6 @@ section h2 {
   top: -19px;
   right: 398px;
 }
-}
 
 /* ELEMENTI NEL MAIN - ARTICLE */
 
@@ -201,8 +201,9 @@ h1 + p {
     border-radius: 20px;
   }
 }
-h1 span {
+article h1 span {
   position: relative;
+  z-index: 4; /* serve un numero più grande sennò è uguale  */
 }
 span img {
   position: absolute;
@@ -210,6 +211,7 @@ span img {
   bottom: -3px;
   left: 5px;
   width: 500px;
+  z-index: -1;
 }
 
 .imgLeft {
@@ -358,7 +360,45 @@ aside div p:last-child {
   font-size: 0.8em;
   text-align: right;
 }
-
+.icone {
+  right: 0px;
+  position: sticky;
+  bottom: 0;
+  z-index: 1000;
+}
+#icon1 {
+  position: absolute;
+  bottom: 200px;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.349);
+  padding: 8px;
+  border: 3px solid white;
+  border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+}
+#icon2 {
+  position: absolute;
+  bottom: 100px;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.349);
+  padding: 8px;
+  border: 3px solid white;
+  border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+}
+#icon3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.349);
+  padding: 8px;
+  border: 3px solid white;
+  border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+}
 /* FOOTER */
 footer {
   background: rgb(53, 53, 53);
